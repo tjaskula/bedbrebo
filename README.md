@@ -14,7 +14,7 @@ update the schedule, number of available rooms, and see what has been already bo
 
 For the full list of business rules please look into the project [wiki](https://github.com/tjaskula/bedbrebo/wiki).
 
-## The list of feature
+## The list of features
 
 TODO
 
@@ -22,6 +22,6 @@ TODO
 
 Two kinds of implementations are available; C# and F#, it you want to contribute in another language, please free to send a PR.
 
-# The installation
+## The installation
 
 TODO
