@@ -179,3 +179,6 @@ NDepend/
 
 # FAKE libs
 .fake/
+
+# Paket libs
+.paket/paket.exe
