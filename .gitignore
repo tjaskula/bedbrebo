@@ -181,4 +181,5 @@ NDepend/
 .fake/
 
 # Paket libs
-.paket/paket.exe
+CSharp/.paket/paket.exe
+FSharp/.paket/paket.exe
