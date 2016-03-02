@@ -11,3 +11,4 @@ branches:
 
 before_install:
  - chmod +x build.sh
+ - chmod +x CSharp/build.sh
