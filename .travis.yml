@@ -3,7 +3,9 @@ language: csharp
 sudo: false  # use the new container-based Travis infrastructure
 
 script: 
-  - ./CSharp/build.sh Default
+  - cd CSharp/
+  - build.sh Default
+  - cd ..
 
 branches:
   except:
