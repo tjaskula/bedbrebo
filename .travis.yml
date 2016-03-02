@@ -6,6 +6,9 @@ script:
   - cd CSharp/
   - ./build.sh Default
   - cd ..
+  - cd FSharp/
+  - ./build.sh Default
+  - cd ..
 
 branches:
   except:
@@ -13,3 +16,4 @@ branches:
 
 before_install:
  - chmod +x CSharp/build.sh
+ - chmod +x FSharp/build.sh

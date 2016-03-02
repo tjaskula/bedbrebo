@@ -5,6 +5,14 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Domain", "Domain\Domain.fsproj", "{7D0A4711-7D7D-4F0B-B93D-9FCB6CB46267}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{118E18E4-E659-4497-BA72-DEB5631AABA6}"
+	ProjectSection(SolutionItems) = preProject
+		..\.travis.yml = ..\.travis.yml
+		build.cmd = build.cmd
+		build.fsx = build.fsx
+		build.sh = build.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
