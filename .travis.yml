@@ -3,11 +3,11 @@ language: csharp
 sudo: false  # use the new container-based Travis infrastructure
 
 script: 
-  - ./buildCSharp.sh Default
+  - ./build.sh Default
 
 branches:
   except:
     - gh-pages
 
 before_install:
- - chmod +x buildCSharp.sh
+ - chmod +x build.sh

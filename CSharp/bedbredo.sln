@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{4A9C1D48
 		..\.travis.yml = ..\.travis.yml
 		build.cmd = build.cmd
 		build.fsx = build.fsx
-		..\buildCSharp.sh = ..\buildCSharp.sh
+		build.sh = build.sh
 	EndProjectSection
 EndProject
 Global
