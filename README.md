@@ -24,6 +24,8 @@ Two kinds of implementations are available; C# and F#, it you want to contribute
 
 ## The installation
 
-*builds on mono* ![Mono build](https://travis-ci.org/tjaskula/bedbrebo.svg?branch=master)
+The current version:
+
+*Builds on mono* ![Mono build](https://travis-ci.org/tjaskula/bedbrebo.svg?branch=master)
 
 TODO
