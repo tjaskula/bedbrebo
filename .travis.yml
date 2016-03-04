@@ -4,10 +4,10 @@ sudo: false  # use the new container-based Travis infrastructure
 
 script: 
   - cd CSharp/
-  - ./build.sh BuildApp
+  - ./build.sh BuildApp45
   - cd ..
   - cd FSharp/
-  - ./build.sh BuildApp
+  - ./build.sh BuildApp45
   - cd ..
 
 branches:

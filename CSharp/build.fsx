@@ -23,7 +23,7 @@ let buildMode = getBuildParamOrDefault "buildMode" "Release"
 
 MSBuildDefaults <- { 
     MSBuildDefaults with 
-        ToolsVersion = Some "12.0"
+        ToolsVersion = Some "14.0"
         Verbosity = Some MSBuildVerbosity.Minimal }
 
 Target "Clean" (fun _ ->
@@ -32,7 +32,7 @@ Target "Clean" (fun _ ->
 
 let setParams defaults = {
     defaults with
-        ToolsVersion = Some("12.0")
+        ToolsVersion = Some("14.0")
         Targets = ["Build"]
         Properties =
             [
@@ -44,12 +44,22 @@ Target "BuildApp" (fun _ ->
     build setParams "./bedbrebo.sln"
 )
 
+Target "BuildApp45" (fun _ ->
+    build (fun p -> let defaults = setParams p
+                    {defaults with 
+                                ToolsVersion = Some("12.0") 
+                                Properties = ["TargetFrameworkVersion", "v4.5"]}) "./bedbrebo.sln"
+)
+
 Target "Default" DoNothing
 
 "Clean"
    ==> "BuildApp"
 
 "BuildApp"
+   ==> "Default"
+
+"BuildApp45"
    ==> "Default"
 
 RunTargetOrDefault "BuildApp"
