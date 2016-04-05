@@ -1,6 +1,7 @@
 build_script:
- - ps: cd CSharp
+ - ps: cd CSharp\scripts
  - ps: .\build.cmd BuildApp
+ - ps: cd ..
  - ps: cd ..
  - ps: cd FSharp
  - ps: .\build.cmd BuildApp

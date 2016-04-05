@@ -3,8 +3,9 @@ language: csharp
 sudo: false  # use the new container-based Travis infrastructure
 
 script: 
-  - cd CSharp/
+  - cd CSharp/scripts/
   - ./build.sh BuildApp45
+  - cd ..
   - cd ..
   - cd FSharp/
   - ./build.sh BuildApp45
@@ -15,5 +16,5 @@ branches:
     - gh-pages
 
 before_install:
- - chmod +x CSharp/build.sh
+ - chmod +x CSharp/scripts/build.sh
  - chmod +x FSharp/build.sh
