@@ -3,7 +3,8 @@ build_script:
  - ps: .\build.cmd BuildApp
  - ps: cd ..
  - ps: cd ..
- - ps: cd FSharp
+ - ps: cd FSharp\scripts
  - ps: .\build.cmd BuildApp
+ - ps: cd ..
  - ps: cd ..
 test: off

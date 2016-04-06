@@ -7,8 +7,9 @@ script:
   - ./build.sh BuildApp45
   - cd ..
   - cd ..
-  - cd FSharp/
+  - cd FSharp/scripts/
   - ./build.sh BuildApp45
+  - cd ..
   - cd ..
 
 branches:
@@ -17,4 +18,4 @@ branches:
 
 before_install:
  - chmod +x CSharp/scripts/build.sh
- - chmod +x FSharp/build.sh
+ - chmod +x FSharp/scripts/build.sh

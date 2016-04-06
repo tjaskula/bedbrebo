@@ -1,0 +1,5 @@
+NUGET
+  remote: https://www.nuget.org/api/v2
+  specs:
+    FAKE (4.21.0)
+    paket.bootstrapper (2.46.0)
