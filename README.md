@@ -26,7 +26,7 @@ Two kinds of implementations are available; C# and F#, it you want to contribute
 
 The current version:
 
-*Builds on Mono (4.2.2)* ![Mono build status](https://travis-ci.org/tjaskula/bedbrebo.svg?branch=master)  
+*Builds on Mono (4.2.3)* ![Mono build status](https://travis-ci.org/tjaskula/bedbrebo.svg?branch=master)  
 *Builds on Windows* ![Windows build status](https://ci.appveyor.com/api/projects/status/github/tjaskula/bedbrebo?branch=master&svg=true)
 
 TODO
