@@ -40,6 +40,15 @@ let setParams defaults = {
             ]
     }
 
+Target "RestorePackages" (fun _ -> 
+     "./bedbrebo.sln"
+     |> RestoreMSSolutionPackages (fun p ->
+         { p with
+             Sources = "https://www.nuget.org/api/v2" :: p.Sources
+             OutputPath = "./packages"
+             Retries = 4 })
+ )
+
 Target "BuildApp" (fun _ ->
     build setParams "./bedbrebo.sln"
 )
@@ -55,6 +64,10 @@ Target "Default" DoNothing
 
 "Clean"
    ==> "BuildApp"
+
+"RestorePackages"
+    ==> "BuildApp"
+    ==> "BuildApp45"
 
 "BuildApp"
    ==> "Default"
