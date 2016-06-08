@@ -67,6 +67,8 @@ Target "Default" DoNothing
 
 "RestorePackages"
     ==> "BuildApp"
+
+"RestorePackages"
     ==> "BuildApp45"
 
 "BuildApp"
