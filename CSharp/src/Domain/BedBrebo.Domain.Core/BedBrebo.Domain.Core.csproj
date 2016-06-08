@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{842B6DA0-A226-4A8B-B4CA-5EF6AE33C3AE}</ProjectGuid>
+    <ProjectGuid>{A754043F-D943-4949-A43E-2E91101F66D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BedBrebo.Domain.Bookings</RootNamespace>
-    <AssemblyName>BedBrebo.Domain.Bookings</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>BedBrebo.Domain.Core</RootNamespace>
+    <AssemblyName>BedBrebo.Domain.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,15 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\PutInBookingRequest.cs" />
-    <Compile Include="LodgingId.cs" />
+    <Compile Include="Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BedBrebo.Domain.Core\BedBrebo.Domain.Core.csproj">
-      <Project>{a754043f-d943-4949-a43e-2e91101f66d7}</Project>
-      <Name>BedBrebo.Domain.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
