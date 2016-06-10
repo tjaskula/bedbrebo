@@ -6,6 +6,7 @@ System.IO.Directory.SetCurrentDirectory (__SOURCE_DIRECTORY__ + "/../src")
 #r "System.Configuration.dll"
 
 open Fake
+open Fake.Testing
 
 open System
 
@@ -18,6 +19,7 @@ let projectSummary = "Bedbrebo, online catalog of B&B rent offers."
 
 // directories
 let buildDir = "./build/"
+let testDir = "./test"
 
 let buildMode = getBuildParamOrDefault "buildMode" "Release"
 
@@ -27,7 +29,7 @@ MSBuildDefaults <- {
         Verbosity = Some MSBuildVerbosity.Minimal }
 
 Target "Clean" (fun _ ->
-    CleanDirs [buildDir]
+    CleanDirs [buildDir; testDir]
 )
 
 let setParams defaults = {
@@ -39,6 +41,16 @@ let setParams defaults = {
                 "Configuration", buildMode
             ]
     }
+
+// define test dlls
+let testDlls = !! (testDir + "/*UnitTest.dll")
+
+Target "xUnitTest" (fun _ ->
+    testDlls
+        |> xUnit (fun p -> 
+            {p with 
+                ShadowCopy = false })
+)
 
 Target "RestorePackages" (fun _ -> 
      "./bedbrebo.sln"
@@ -66,9 +78,11 @@ Target "Default" DoNothing
    ==> "BuildApp"
 
 "RestorePackages"
+    ==> "xUnitTest"
     ==> "BuildApp"
 
 "RestorePackages"
+    ==> "xUnitTest"
     ==> "BuildApp45"
 
 "BuildApp"
