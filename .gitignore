@@ -25,6 +25,9 @@ lib/
 *.VisualState.xml
 TestResult.xml
 
+#xUnit
+test/
+
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
