@@ -4,3 +4,4 @@ NUGET
     FAKE (4.21)
     NuGet.CommandLine (3.4.3)
     paket.bootstrapper (2.46)
+    xunit.runner.console (2.1)
