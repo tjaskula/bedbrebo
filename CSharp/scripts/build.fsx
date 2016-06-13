@@ -19,7 +19,7 @@ let projectSummary = "Bedbrebo, online catalog of B&B rent offers."
 
 // directories
 let buildDir = "./build/"
-let testDir = "./Domain/BedBrebo.Domain.Bookings.UnitTests"
+let testDir = "./test/"
 
 let buildMode = getBuildParamOrDefault "buildMode" "Release"
 
@@ -29,7 +29,7 @@ MSBuildDefaults <- {
         Verbosity = Some MSBuildVerbosity.Minimal }
 
 Target "Clean" (fun _ ->
-    CleanDirs [buildDir]
+    CleanDirs [buildDir; testDir]
 )
 
 let setParams defaults = {
@@ -43,7 +43,7 @@ let setParams defaults = {
     }
 
 // define test dlls
-let testDlls = !! (testDir + "/*UnitTest.dll")
+let testDlls = !! (testDir + "*.UnitTests.dll")
 
 Target "xUnitTest" (fun _ ->
     tracefn "Running tests..."
@@ -51,7 +51,11 @@ Target "xUnitTest" (fun _ ->
     |> xUnit2 (fun p -> 
         {p with 
             HtmlOutputPath = Some(testDir @@ "xunit.html")
-            ToolPath = @"../packages/xunit.runner.console.2.0.0/tools/xunit.console.exe"})
+            ToolPath = @"./packages/xunit.runner.console/tools/xunit.console.exe"})
+)
+
+Target "xUnitTest45" (fun _ ->
+    Run "xUnitTest"
 )
 
 Target "RestorePackages" (fun _ -> 
@@ -80,17 +84,15 @@ Target "Default" DoNothing
    ==> "BuildApp"
 
 "RestorePackages"
-    ==> "xUnitTest"
     ==> "BuildApp"
 
 "RestorePackages"
-    ==> "xUnitTest"
     ==> "BuildApp45"
 
 "BuildApp"
-   ==> "Default"
+   ==> "xUnitTest"
 
 "BuildApp45"
-   ==> "Default"
+   ==> "xUnitTest45"
 
 RunTargetOrDefault "BuildApp"
