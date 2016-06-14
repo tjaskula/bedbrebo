@@ -4,7 +4,7 @@ build_script:
  - ps: cd ..
  - ps: cd ..
  - ps: cd FSharp\scripts
- - ps: .\build.cmd xUnitTest
+ - ps: .\build.cmd BuildApp
  - ps: cd ..
  - ps: cd ..
 test: off

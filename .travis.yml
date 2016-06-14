@@ -8,7 +8,7 @@ script:
   - cd ..
   - cd ..
   - cd FSharp/scripts/
-  - ./build.sh xUnitTest45
+  - ./build.sh BuildApp45
   - cd ..
   - cd ..
 
