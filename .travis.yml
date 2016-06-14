@@ -4,11 +4,11 @@ sudo: false  # use the new container-based Travis infrastructure
 
 script: 
   - cd CSharp/scripts/
-  - ./build.sh BuildApp45
+  - ./build.sh xUnitTest45
   - cd ..
   - cd ..
   - cd FSharp/scripts/
-  - ./build.sh BuildApp45
+  - ./build.sh xUnitTest45
   - cd ..
   - cd ..
 

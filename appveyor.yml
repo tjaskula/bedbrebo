@@ -1,10 +1,10 @@
 build_script:
  - ps: cd CSharp\scripts
- - ps: .\build.cmd BuildApp
+ - ps: .\build.cmd xUnitTest
  - ps: cd ..
  - ps: cd ..
  - ps: cd FSharp\scripts
- - ps: .\build.cmd BuildApp
+ - ps: .\build.cmd xUnitTest
  - ps: cd ..
  - ps: cd ..
 test: off
