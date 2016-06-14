@@ -81,18 +81,13 @@ Target "BuildApp45" (fun _ ->
 Target "Default" DoNothing
 
 "Clean"
+   ==> "RestorePackages"
    ==> "BuildApp"
-
-"RestorePackages"
-    ==> "BuildApp"
-
-"RestorePackages"
-    ==> "BuildApp45"
-
-"BuildApp"
    ==> "xUnitTest"
 
-"BuildApp45"
+"Clean"
+   ==> "RestorePackages"
+   ==> "BuildApp45"
    ==> "xUnitTest45"
 
 RunTargetOrDefault "BuildApp"
