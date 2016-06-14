@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\PutInBookingRequest.cs" />
+    <Compile Include="LodgingAvailability.cs" />
     <Compile Include="LodgingId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

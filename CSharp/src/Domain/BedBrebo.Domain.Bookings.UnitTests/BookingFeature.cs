@@ -3,33 +3,25 @@ using Xunit;
 
 namespace BedBrebo.Domain.Bookings.UnitTests
 {
-    public class Calculator
-    {
-        public int Add(int x, int y)
-        {
-            return x + y;
-        }
-    }
-
     public class BookingFeature
     {
         [Scenario]
-        public void BookingConfirmation(int x, int y, Calculator calculator, int answer)
+        public void ConfirmBookingOnAvailableLodging(LodgingAvailability lodgingAvailability)
         {
-            "Given the number 1"
-                .x(() => x = 1);
+            "Given LodgingAvailability ID 343"
+                .x(() => lodgingAvailability = new LodgingAvailability(new LodgingId(343)));
 
-            "And the number 2"
-                .x(() => y = 2);
+            //"And the number 2"
+            //    .x(() => y = 2);
 
-            "And a calculator"
-                .x(() => calculator = new Calculator());
+            //"And a calculator"
+            //    .x(() => calculator = new Calculator());
 
-            "When I add the numbers together"
-                .x(() => answer = calculator.Add(x, y));
+            //"When I add the numbers together"
+            //    .x(() => answer = calculator.Add(x, y));
 
             "Then the answer is 3"
-                .x(() => Assert.Equal(3, answer));
+                .x(() => Assert.Equal(3, 3));
         }
     }
 }
