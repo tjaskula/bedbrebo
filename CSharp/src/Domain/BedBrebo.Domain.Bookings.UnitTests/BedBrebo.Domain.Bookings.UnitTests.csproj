@@ -76,6 +76,10 @@
       <Project>{842b6da0-a226-4a8b-b4ca-5ef6ae33c3ae}</Project>
       <Name>BedBrebo.Domain.Bookings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BedBrebo.Domain.Core\BedBrebo.Domain.Core.csproj">
+      <Project>{A754043F-D943-4949-A43E-2E91101F66D7}</Project>
+      <Name>BedBrebo.Domain.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
