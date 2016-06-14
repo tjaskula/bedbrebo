@@ -55,7 +55,7 @@ Target "xUnitTest" (fun _ ->
 )
 
 Target "xUnitTest45" (fun _ ->
-    Run "xUnitTest"
+    runSingleTarget (getTarget "xUnitTest")
 )
 
 Target "RestorePackages" (fun _ -> 
