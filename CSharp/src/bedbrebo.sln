@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0472FA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedBrebo.Domain.Core", "Domain\BedBrebo.Domain.Core\BedBrebo.Domain.Core.csproj", "{A754043F-D943-4949-A43E-2E91101F66D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedBrebo.Domain.Core.UnitTests", "Domain\BedBrebo.Domain.Core.UnitTests\BedBrebo.Domain.Core.UnitTests.csproj", "{65CBFA24-5156-432B-9818-EF348AF69FE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{A754043F-D943-4949-A43E-2E91101F66D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A754043F-D943-4949-A43E-2E91101F66D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A754043F-D943-4949-A43E-2E91101F66D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65CBFA24-5156-432B-9818-EF348AF69FE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65CBFA24-5156-432B-9818-EF348AF69FE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65CBFA24-5156-432B-9818-EF348AF69FE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65CBFA24-5156-432B-9818-EF348AF69FE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +55,6 @@ Global
 		{4E98E9AE-B76B-4057-87E1-10EB9AA70128} = {0472FAF7-E565-47B3-A3F6-7EF444C98712}
 		{B96541A3-6FBF-4F7E-8481-7F5B18557E5D} = {4E98E9AE-B76B-4057-87E1-10EB9AA70128}
 		{A754043F-D943-4949-A43E-2E91101F66D7} = {0472FAF7-E565-47B3-A3F6-7EF444C98712}
+		{65CBFA24-5156-432B-9818-EF348AF69FE3} = {0472FAF7-E565-47B3-A3F6-7EF444C98712}
 	EndGlobalSection
 EndGlobal

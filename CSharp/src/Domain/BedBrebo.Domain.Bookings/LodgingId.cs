@@ -3,7 +3,7 @@ using BedBrebo.Domain.Core.Exceptions;
 
 namespace BedBrebo.Domain.Bookings
 {
-    public class LodgingId : IIdentifier<int>
+    public class LodgingId : ValueObject<LodgingId>, IIdentifier<int>
     {
         public LodgingId(int id)
         {
