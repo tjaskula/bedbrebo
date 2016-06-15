@@ -7,7 +7,7 @@ namespace BedBrebo.Domain.Bookings
     {
         public LodgingId(int id)
         {
-            if (id <= 0) throw new InvalidIdentifierAssignment($"The id value '{id}' must be greater then 0.");
+            if (id <= 0) throw new InvalidIdentifierAssignmentException($"The id value '{id}' must be greater then 0.");
 
             Id = id;
         }

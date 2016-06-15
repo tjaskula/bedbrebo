@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
-    <Compile Include="Exceptions\InvalidIdentifierAssignment.cs" />
+    <Compile Include="Exceptions\InvalidIdentifierAssignmentException.cs" />
     <Compile Include="ICommandHandler.cs" />
     <Compile Include="IEvent.cs" />
     <Compile Include="IEventPublisher.cs" />

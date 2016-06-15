@@ -11,7 +11,7 @@ namespace BedBrebo.Domain.Bookings.UnitTests
         InlineData(0)]
         public void Should_throw_on_construction_for_invalid_id(int id)
         {
-            Assert.Throws<InvalidIdentifierAssignment>(() => new LodgingId(id));
+            Assert.Throws<InvalidIdentifierAssignmentException>(() => new LodgingId(id));
         }
 
         [Theory,
