@@ -1,9 +1,15 @@
 using System;
+using System.Collections.Generic;
+using BedBrebo.Domain.Bookings.Commands;
+using BedBrebo.Domain.Bookings.Events;
+using BedBrebo.Domain.Core;
 
 namespace BedBrebo.Domain.Bookings
 {
-    public class LodgingAvailability
+    public class LodgingAvailability : ICommandHandler<PutInBookingRequest>, IEventPublisher
     {
+        private readonly IList<IEvent> _changes = new List<IEvent>();
+      
         public LodgingAvailability(LodgingId lodgingId)
         {
             if (lodgingId == null) throw new ArgumentNullException(nameof(lodgingId));
@@ -12,5 +18,15 @@ namespace BedBrebo.Domain.Bookings
         }
 
         public LodgingId Id { get; private set; }
+
+        public void Handle(PutInBookingRequest command)
+        {
+            _changes.Add(new LodgingBooked());
+        }
+
+        public IEnumerable<IEvent> GetChanges()
+        {
+            return _changes;
+        }
     }
 }

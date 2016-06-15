@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="Exceptions\InvalidIdentifierAssignment.cs" />
+    <Compile Include="ICommandHandler.cs" />
+    <Compile Include="IEvent.cs" />
+    <Compile Include="IEventPublisher.cs" />
     <Compile Include="IIdentifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

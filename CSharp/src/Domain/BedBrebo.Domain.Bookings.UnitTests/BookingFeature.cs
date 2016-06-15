@@ -1,27 +1,34 @@
-﻿using Xbehave;
-using Xunit;
+﻿using System.Linq;
+using BedBrebo.Domain.Bookings.Commands;
+using BedBrebo.Domain.Bookings.Events;
+using BedBrebo.Domain.Core;
+using Xbehave;
+using FluentAssertions;
 
 namespace BedBrebo.Domain.Bookings.UnitTests
 {
     public class BookingFeature
     {
         [Scenario]
-        public void ConfirmBookingOnAvailableLodging(LodgingAvailability lodgingAvailability)
+        public void ConfirmBookingOnAvailableLodging(LodgingAvailability lodgingAvailability, PutInBookingRequest command, IEvent @event)
         {
-            "Given LodgingAvailability ID 343"
-                .x(() => lodgingAvailability = new LodgingAvailability(new LodgingId(343)));
+            var lodgingId = new LodgingId(343);
 
-            //"And the number 2"
-            //    .x(() => y = 2);
+            "Given LodgingAvailability ID 343 from 1 to 7 June."
+                .x(() => lodgingAvailability = new LodgingAvailability(lodgingId));
 
-            //"And a calculator"
-            //    .x(() => calculator = new Calculator());
+            "And booking request for Lodging ID 343"
+                .x(() => command = new PutInBookingRequest(lodgingId));
 
-            //"When I add the numbers together"
-            //    .x(() => answer = calculator.Add(x, y));
+            "When a Guest is making a booking request for Lodging ID 343"
+                .x(() =>
+                {
+                    lodgingAvailability.Handle(command);
+                    @event = lodgingAvailability.GetChanges().First();
+                });
 
-            "Then the answer is 3"
-                .x(() => Assert.Equal(3, 3));
+            "Then Lodging booking is confirmed"
+                .x(() => @event.Should().BeOfType<LodgingBooked>());
         }
     }
 }
