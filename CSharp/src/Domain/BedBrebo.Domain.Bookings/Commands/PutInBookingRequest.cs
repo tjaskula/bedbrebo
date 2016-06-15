@@ -3,7 +3,7 @@ using BedBrebo.Domain.Core;
 
 namespace BedBrebo.Domain.Bookings.Commands
 {
-    public class PutInBookingRequest : Command
+    public class PutInBookingRequest : ICommand
     {
         public PutInBookingRequest(LodgingId id)
         {
