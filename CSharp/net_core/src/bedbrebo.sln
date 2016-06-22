@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{16B698DE-5E5E-4E4E-A2C3-570F52457217}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "BedBrebo.Domain.Core", "Domain\BedBrebo.Domain.Core\BedBrebo.Domain.Core.xproj", "{67A66EA8-29EA-4E78-BDEA-8C5DBE80FD6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{3384EFB7-8596-4286-9859-2523B537AC99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bookings", "Bookings", "{F23A985D-1CD5-45A6-804F-94562945206C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67A66EA8-29EA-4E78-BDEA-8C5DBE80FD6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A66EA8-29EA-4E78-BDEA-8C5DBE80FD6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A66EA8-29EA-4E78-BDEA-8C5DBE80FD6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A66EA8-29EA-4E78-BDEA-8C5DBE80FD6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67A66EA8-29EA-4E78-BDEA-8C5DBE80FD6A} = {3384EFB7-8596-4286-9859-2523B537AC99}
+		{F23A985D-1CD5-45A6-804F-94562945206C} = {3384EFB7-8596-4286-9859-2523B537AC99}
+	EndGlobalSection
+EndGlobal
