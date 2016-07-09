@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ..
 cd src/
 
 if test "$OS" = "Windows_NT"
