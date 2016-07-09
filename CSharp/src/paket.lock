@@ -1,7 +1,7 @@
 NUGET
   remote: https://www.nuget.org/api/v2
   specs:
-    FAKE (4.21)
+    FAKE (4.29.2)
     NuGet.CommandLine (3.4.3)
-    paket.bootstrapper (2.46)
+    paket.bootstrapper (3.0)
     xunit.runner.console (2.1)
