@@ -2,6 +2,8 @@ language: csharp
 
 sudo: false  # use the new container-based Travis infrastructure
 
+osx_image: xcode7.3
+
 script: 
   - cd CSharp/scripts/
   - ./build.sh xUnitTest45

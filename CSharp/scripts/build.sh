@@ -20,7 +20,6 @@ then
   fi
   
   [ ! -e build.fsx ] && .paket/paket.exe update
-  [ ! -e build.fsx ] && packages/FAKE/tools/FAKE.exe ../scripts/init.fsx
   packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO ../scripts/build.fsx 
 else
   # use mono
@@ -37,6 +36,5 @@ else
   fi
 
   [ ! -e build.fsx ] && mono .paket/paket.exe update
-  [ ! -e build.fsx ] && mono packages/FAKE/tools/FAKE.exe ../scripts/init.fsx
   mono packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO ../scripts/build.fsx 
 fi
