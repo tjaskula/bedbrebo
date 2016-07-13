@@ -10,11 +10,11 @@ os:
 
 script: 
   - cd CSharp/scripts/
-  - ./build.sh xUnitTest45
+  - ./build.sh xUnitTest
   - cd ..
   - cd ..
   - cd FSharp/scripts/
-  - ./build.sh BuildApp45
+  - ./build.sh BuildApp
   - cd ..
   - cd ..
 

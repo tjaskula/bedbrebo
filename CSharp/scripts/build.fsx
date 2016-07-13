@@ -54,10 +54,6 @@ Target "xUnitTest" (fun _ ->
             ToolPath = @"./packages/xunit.runner.console/tools/xunit.console.exe"})
 )
 
-Target "xUnitTest45" (fun _ ->
-    runSingleTarget (getTarget "xUnitTest")
-)
-
 Target "RestorePackages" (fun _ -> 
      "./bedbrebo.sln"
      |> RestoreMSSolutionPackages (fun p ->
@@ -71,23 +67,11 @@ Target "BuildApp" (fun _ ->
     build setParams "./bedbrebo.sln"
 )
 
-Target "BuildApp45" (fun _ ->
-    build (fun p -> let defaults = setParams p
-                    {defaults with
-                                ToolsVersion = Some("14.0")
-                                Properties = ["TargetFrameworkVersion", "v4.6.1"]}) "./bedbrebo.sln"
-)
-
 Target "Default" DoNothing
 
 "Clean"
    ==> "RestorePackages"
    ==> "BuildApp"
    ==> "xUnitTest"
-
-"Clean"
-   ==> "RestorePackages"
-   ==> "BuildApp45"
-   ==> "xUnitTest45"
 
 RunTargetOrDefault "BuildApp"
