@@ -73,8 +73,9 @@ Target "BuildApp" (fun _ ->
 
 Target "BuildApp45" (fun _ ->
     build (fun p -> let defaults = setParams p
-                    {defaults with 
-                                Properties = ["TargetFrameworkVersion", "v4.6"]}) "./bedbrebo.sln"
+                    {defaults with
+                                ToolsVersion = Some("14.0")
+                                Properties = ["TargetFrameworkVersion", "v4.6.1"]}) "./bedbrebo.sln"
 )
 
 Target "Default" DoNothing
