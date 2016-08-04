@@ -10,9 +10,11 @@ namespace BedBrebo.Domain.Bookings.Commands
             if (id == null)
                 throw new ArgumentNullException(nameof(id));
 
-            Id = id;
+            LoggingId = id;
+            Id = Guid.NewGuid();
         }
 
-        public LodgingId Id { get; private set; }
+        public LodgingId LoggingId { get; private set; }
+        public Guid Id { get; }
     }
 }

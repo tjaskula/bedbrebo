@@ -1,6 +1,8 @@
-﻿namespace BedBrebo.Domain.Core
+﻿using System;
+
+namespace BedBrebo.Domain.Core
 {
-    public interface ICommand
+    public interface ICommand : IIdentifier<Guid>
     {
     }
 }
