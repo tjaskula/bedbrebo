@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 14.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -28,6 +28,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{ABFB3BF3-69D7-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedBrebo.Web.Api", "Web\BedBrebo.Web.Api\BedBrebo.Web.Api.csproj", "{01F34D44-0856-4BA3-B6CD-E83DF2B4B7E5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{200D9514-A4CF-42C9-8488-B0EC308F78F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BedBrebo.Infrastructure.Messaging", "Infrastructure\BedBrebo.Infrastructure.Messaging\BedBrebo.Infrastructure.Messaging.csproj", "{B33EFFD0-0870-41AE-AA10-0E61F72AE588}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +58,10 @@ Global
 		{01F34D44-0856-4BA3-B6CD-E83DF2B4B7E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01F34D44-0856-4BA3-B6CD-E83DF2B4B7E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01F34D44-0856-4BA3-B6CD-E83DF2B4B7E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B33EFFD0-0870-41AE-AA10-0E61F72AE588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B33EFFD0-0870-41AE-AA10-0E61F72AE588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B33EFFD0-0870-41AE-AA10-0E61F72AE588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B33EFFD0-0870-41AE-AA10-0E61F72AE588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +73,6 @@ Global
 		{A754043F-D943-4949-A43E-2E91101F66D7} = {0472FAF7-E565-47B3-A3F6-7EF444C98712}
 		{65CBFA24-5156-432B-9818-EF348AF69FE3} = {0472FAF7-E565-47B3-A3F6-7EF444C98712}
 		{01F34D44-0856-4BA3-B6CD-E83DF2B4B7E5} = {ABFB3BF3-69D7-4157-9781-5B595E30985C}
+		{B33EFFD0-0870-41AE-AA10-0E61F72AE588} = {200D9514-A4CF-42C9-8488-B0EC308F78F2}
 	EndGlobalSection
 EndGlobal
