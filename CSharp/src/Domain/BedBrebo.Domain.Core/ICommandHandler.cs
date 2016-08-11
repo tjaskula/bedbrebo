@@ -1,7 +1,6 @@
 namespace BedBrebo.Domain.Core
 {
-    public interface ICommandHandler<in T> where T: ICommand
+    public interface ICommandHandler
     {
-        void Handle(T command);
     }
 }
