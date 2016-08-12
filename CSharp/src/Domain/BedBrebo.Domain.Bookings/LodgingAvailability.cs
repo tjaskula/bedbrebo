@@ -6,7 +6,7 @@ using BedBrebo.Domain.Core;
 
 namespace BedBrebo.Domain.Bookings
 {
-    public class LodgingAvailability : ICommandHandler<PutInBookingRequest>, IEventPublisher
+    public class LodgingAvailability : IEventPublisher
     {
         private readonly IList<IEvent> _changes = new List<IEvent>();
       
@@ -19,7 +19,7 @@ namespace BedBrebo.Domain.Bookings
 
         public LodgingId Id { get; private set; }
 
-        public void Handle(PutInBookingRequest command)
+        public void BookLodging(PutInBookingRequest command)
         {
             _changes.Add(new LodgingBooked());
         }

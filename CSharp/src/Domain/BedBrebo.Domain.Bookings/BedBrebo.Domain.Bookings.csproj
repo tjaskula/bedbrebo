@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandHandlers\BookingCommandHandler.cs" />
     <Compile Include="Commands\PutInBookingRequest.cs" />
     <Compile Include="Events\LodgingBooked.cs" />
     <Compile Include="LodgingAvailability.cs" />

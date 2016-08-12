@@ -8,8 +8,11 @@ namespace BedBrebo.Infrastructure.Messaging
     {
         private readonly Dictionary<Type, Action<ICommand>> _dictionary = new Dictionary<Type, Action<ICommand>>();
 
-        public void Subscribe<T>(Action<T> commandHandler) where T : ICommand
+        public void Register<T>(Action<T> commandHandler) where T : ICommand
         {
+            if (_dictionary.ContainsKey(typeof(T)))
+                throw new ArgumentException("The command handler for the command of type '" + typeof(T) + "' is already registered." +
+                                            "Cannot register more than 1 command handler for the same command type.");
             _dictionary.Add(typeof(T), x => commandHandler((T)x));
         }
 

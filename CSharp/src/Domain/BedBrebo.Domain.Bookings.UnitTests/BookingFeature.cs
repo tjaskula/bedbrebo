@@ -23,7 +23,7 @@ namespace BedBrebo.Domain.Bookings.UnitTests
             "When a Guest is making a booking request for Lodging ID 343"
                 .x(() =>
                 {
-                    lodgingAvailability.Handle(command);
+                    lodgingAvailability.BookLodging(command);
                     @event = lodgingAvailability.GetChanges().First();
                 });
 
