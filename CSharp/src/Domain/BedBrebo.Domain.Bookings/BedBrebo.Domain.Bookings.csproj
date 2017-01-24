@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CommandHandlers\BookingCommandHandler.cs" />
     <Compile Include="Commands\PutInBookingRequest.cs" />
+    <Compile Include="Events\Handlers\LodgingBookedHandler.cs" />
     <Compile Include="Events\LodgingBooked.cs" />
     <Compile Include="LodgingAvailability.cs" />
     <Compile Include="LodgingId.cs" />
@@ -53,6 +54,7 @@
       <Name>BedBrebo.Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
