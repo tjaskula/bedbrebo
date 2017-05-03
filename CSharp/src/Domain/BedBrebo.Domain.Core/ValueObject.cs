@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -78,8 +79,8 @@ namespace BedBrebo.Domain.Core
                 {
                     return false;
                 }
-                else if ((typeof(DateTime).IsAssignableFrom(field.FieldType)) ||
-                         ((typeof(DateTime?).IsAssignableFrom(field.FieldType))))
+                else if (typeof(DateTime).IsAssignableFrom(field.FieldType) ||
+                         typeof(DateTime?).IsAssignableFrom(field.FieldType))
                 {
                     string dateString1 = ((DateTime)value1).ToLongDateString();
                     string dateString2 = ((DateTime)value2).ToLongDateString();
@@ -88,18 +89,33 @@ namespace BedBrebo.Domain.Core
                     {
                         return false;
                     }
-
-                    continue;
                 }
-                else if ((typeof(string).IsAssignableFrom(field.FieldType)))
+                else if (typeof(string).IsAssignableFrom(field.FieldType))
                 {
                     string string1 = value1.ToString();
                     string string2 = value2.ToString();
 
                     if (!string1.Equals(string2, StringComparison.OrdinalIgnoreCase))
                         return false;
+                }
+                else if (typeof(IEnumerable).IsAssignableFrom(field.FieldType))
+                {
+                    var col1 = value1 as IEnumerable;
+                    var col2 = value2 as IEnumerable;
+                    
+                    if (col1 == null || col2 == null)
+                        return false;
 
-                    continue;
+                    var e1 = col1.GetEnumerator();
+                    var e2 = col2.GetEnumerator();
+                    while (e1.MoveNext() && e2.MoveNext())
+                    {
+                        var item1 = e1.Current;
+                        var item2 = e2.Current;
+
+                        if (!item1.Equals(item2))
+                            return false;
+                    }
                 }
                 else if (!value1.Equals(value2))
                     return false;
