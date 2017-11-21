@@ -186,3 +186,6 @@ NDepend/
 # Paket libs
 CSharp/.paket/paket.exe
 FSharp/.paket/paket.exe
+
+# IDEA
+.idea/
