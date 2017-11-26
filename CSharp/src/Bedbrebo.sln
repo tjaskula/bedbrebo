@@ -8,6 +8,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AB872E59-0933-46C5-8B00-F4E7FFEA2DA0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_build", "_build", "{A984C5D0-A49B-4B83-8D56-58D731CEDA55}"
+ProjectSection(SolutionItems) = preProject
+	..\..\appveyor.yml = ..\..\appveyor.yml
+	..\..\.travis.yml = ..\..\.travis.yml
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bedbrebo.Domain.Core.UnitTests", "Domain\Bedbrebo.Domain.Core.UnitTests\Bedbrebo.Domain.Core.UnitTests.csproj", "{B0DC7383-21A6-4EBA-A090-317F93C56597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,11 +25,16 @@ Global
 		{D6504FB1-D718-4D54-A697-7E0BD3F59EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6504FB1-D718-4D54-A697-7E0BD3F59EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6504FB1-D718-4D54-A697-7E0BD3F59EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DC7383-21A6-4EBA-A090-317F93C56597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DC7383-21A6-4EBA-A090-317F93C56597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DC7383-21A6-4EBA-A090-317F93C56597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DC7383-21A6-4EBA-A090-317F93C56597}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D6504FB1-D718-4D54-A697-7E0BD3F59EF5} = {AB872E59-0933-46C5-8B00-F4E7FFEA2DA0}
+		{B0DC7383-21A6-4EBA-A090-317F93C56597} = {AB872E59-0933-46C5-8B00-F4E7FFEA2DA0}
 	EndGlobalSection
 EndGlobal
