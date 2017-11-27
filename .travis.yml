@@ -10,7 +10,8 @@ script:
   - cd CSharp/src/
   - dotnet restore
   - dotnet build
-  - dotnet test
+  - dotnet restore ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - dotnet test ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
   - cd ..
   - cd ..
 

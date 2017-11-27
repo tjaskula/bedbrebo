@@ -12,9 +12,10 @@ before_build:
   # Display .NET Core version
   - cmd: dotnet --version
   # Go into the solution folder
-  - cmd: dotnet restore --verbosity m
+  - cmd: dotnet restore
   # Display minimal restore text
   #- cmd: dotnet restore ./src/src.csproj --verbosity m
+  - cmd: dotnet restore --verbosity m
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - cmd: dotnet build
@@ -27,11 +28,11 @@ after_build:
 clone_depth: 1
 test_script:
   # restore packages for our unit tests
-  # - cmd: dotnet restore ./tests/tests.csproj --verbosity m
+  - cmd: dotnet restore ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj --verbosity m
   # run the unit tests (requires changing into the test directory)
-  #- cmd: cd tests
-  #- cmd: dotnet xunit
-  - cmd: dotnet test
+  # - cmd: cd tests
+  # - cmd: dotnet xunit
+  - cmd: dotnet test ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
 on_finish :
   # any cleanup in here
 deploy: off
