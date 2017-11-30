@@ -9,18 +9,16 @@ init:
 install:
   # Install repo specific stuff here
 before_build:
-  # Go to the repository
-  - cmd: cd CSharp/src/
   # Display .NET Core version
   - cmd: dotnet --version
-  # Go into the solution folder
-  - cmd: dotnet restore
   # Display minimal restore text
   #- cmd: dotnet restore ./src/src.csproj --verbosity m
-  - cmd: dotnet restore --verbosity m
+  - cmd: dotnet restore ./CSharp/src/Bedbrebo.sln --verbosity m
+  - cmd: dotnet restore ./FSharp/src/Bedbrebo.sln --verbosity m
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
-  - cmd: dotnet build
+  - cmd: dotnet build ./CSharp/src/Bedbrebo.sln
+  - cmd: dotnet build ./FSharp/src/Bedbrebo.sln
 after_build:
   # For once the build has completed
 #artifacts:
@@ -30,11 +28,13 @@ after_build:
 clone_depth: 1
 test_script:
   # restore packages for our unit tests
-  - cmd: dotnet restore ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj --verbosity m
+  - cmd: dotnet restore ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj --verbosity m
+  - cmd: dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj --verbosity m
   # run the unit tests (requires changing into the test directory)
   # - cmd: cd tests
   # - cmd: dotnet xunit
-  - cmd: dotnet test ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - cmd: dotnet test ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - cmd: dotnet test ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
 on_finish :
   # any cleanup in here
 deploy: off
