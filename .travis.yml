@@ -7,13 +7,16 @@ os:
   - linux
   - osx
 script:
-  - cd CSharp/src/
-  - dotnet restore
-  - dotnet build
-  - dotnet restore ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
-  - dotnet test ./Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
-  - cd ..
-  - cd ..
+  # CSharp
+  - dotnet restore ./CSharp/src/Bedbrebo.sln
+  - dotnet build ./CSharp/src/Bedbrebo.sln
+  - dotnet restore ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - dotnet test ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  # FSharp
+  - dotnet restore ./FSharp/src/Bedbrebo.sln
+  - dotnet build ./FSharp/src/Bedbrebo.sln
+  - dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - dotnet test ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
 
 branches:
   except:
