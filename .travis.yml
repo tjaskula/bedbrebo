@@ -13,7 +13,7 @@ script:
   - dotnet restore ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
   - dotnet test ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
   # FSharp
-  - dotnet restore ./FSharp/src/Bedbrebo.sln
+  - dotnet restore ./FSharp/src/Bedbrebo.sln --verbosity n
   - dotnet build ./FSharp/src/Bedbrebo.sln
   - dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.fsproj
   - dotnet test ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.fsproj
