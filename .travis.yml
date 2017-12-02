@@ -1,11 +1,15 @@
 language: csharp
-mono: none
-dotnet: 2.0.3
 sudo: false  # use the new container-based Travis infrastructure
 osx_image: xcode9.1
 os:
   - linux
   - osx
+matrix:
+  include:
+    - dotnet: 2.0.3
+      mono: none
+      dist: trusty
+    - mono: latest
 script:
   # CSharp
   - dotnet restore ./CSharp/src/Bedbrebo.sln
