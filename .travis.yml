@@ -8,10 +8,15 @@ os:
   - linux
   - osx
 script:
-
+  # CSharp
+  - dotnet restore ./CSharp/src/Bedbrebo.sln
+  - dotnet build ./CSharp/src/Bedbrebo.sln
+  - dotnet restore ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - dotnet test ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  
   # FSharp
-  - dotnet restore ./FSharp/src/Bedbrebo.sln --verbosity n
-  - dotnet build ./FSharp/src/Bedbrebo.sln
+  - dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core/Bedbrebo.Domain.Core.fsproj
+  - dotnet build ./FSharp/src/Domain/Bedbrebo.Domain.Core/Bedbrebo.Domain.Core.fsproj
   - dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.fsproj
   - dotnet test ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.fsproj
 
