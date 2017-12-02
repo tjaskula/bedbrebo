@@ -29,12 +29,12 @@ clone_depth: 1
 test_script:
   # restore packages for our unit tests
   - cmd: dotnet restore ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj --verbosity m
-  - cmd: dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj --verbosity m
+  - cmd: dotnet restore ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.fsproj --verbosity m
   # run the unit tests (requires changing into the test directory)
   # - cmd: cd tests
   # - cmd: dotnet xunit
   - cmd: dotnet test ./CSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
-  - cmd: dotnet test ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.csproj
+  - cmd: dotnet test ./FSharp/src/Domain/Bedbrebo.Domain.Core.UnitTests/Bedbrebo.Domain.Core.UnitTests.fsproj
 on_finish :
   # any cleanup in here
 deploy: off
